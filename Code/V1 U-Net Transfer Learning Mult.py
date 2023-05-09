@@ -23,7 +23,6 @@ pip install segmentation-models==1.0.1
 #Tifffile: read and write TIFF files
 pip install tifffile
 
-
 import tensorflow as tf
 import numpy as np
 from matplotlib import pyplot as plt
@@ -158,6 +157,9 @@ plt.show()
 *** DEFINE THE MODEL ***
 """
 
+#Backbone Definition
+'''BACKBONE = inceptionv3'''
+'''BACKBONE = efficientnetb0'''
 BACKBONE = 'resnet34'
 preprocess_input1 = sm.get_preprocessing(BACKBONE)
 images1=preprocess_input1(images)
@@ -250,12 +252,8 @@ for i in range(0,1):
 ImageNet
 """
 
-#Backbone: ResNet-34; Dropout: 20%; Transfer Learning: ImageNet; Otmizer: Adam; Loss: Dice Loss; Metric: F1 Score, IOU, Accuracy
-model = sm.Unet(BACKBONE, encoder_weights='imagenet', encoder_freeze=True)
-'''sgd = SGD(learning_rate=0.0001)'''
-'''model.compile(optimizer='sgd', loss=dice_loss, metrics=[f1, sm.metrics.iou_score, 'accuracy'])'''
-
-'''model = sm.Unet(BACKBONE, encoder_weights=None, encoder_freeze=True)'''
+#Backbone: ResNet-34, EfficientNet-b0, Inception-V3; Transfer Learning: ImageNet; Otmizer: Adam; Loss: Dice Loss; Metric: F1 Score, IOU, Accuracy
+'''model = sm.Unet(BACKBONE, encoder_weights=None, encoder_freeze=True)'''model = sm.Unet(BACKBONE, encoder_weights='imagenet', encoder_freeze=True)
 model.compile(optimizer='Adam', loss=dice_loss, metrics=[f1, sm.metrics.iou_score, 'accuracy'])
 model.trainable = True
 print(model.summary())
