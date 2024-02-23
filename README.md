@@ -1,4 +1,4 @@
-<h1>Segmentação de plantas daninhas por meio de redes neurais convolucionais em imagens multiespectrais capturadas por VANT</h1>
+<h1>SEGMENTAÇÃO DE PLANTAS DANINHAS POR MEIO DE REDES NEURAIS CONVOLUCIONAIS EM IMAGENS MULTIESPECTRAIS CAPTURADAS POR VANT</h1>
 
 > **Repositório com os dados, implementação e resultados da dissertação de mestrado apresentada ao Programa de Pós-Graduação em Ciências Cartográficas da Faculdade de Ciências e Tecnologia FCT/UNESP (2023)**
 
